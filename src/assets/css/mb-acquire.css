@@ -1,0 +1,112 @@
+.noMore{
+    font-size: 14px;
+    font-weight: 500;
+    color:#bbb;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .sort .active{
+    color:#5683ea;
+  }
+  .more{
+    width:100%;
+    margin-left: 0.5%;
+    margin-top:80px;
+  }
+  .sort span{
+    font-size: 13px;
+    font-weight: 500;
+    color:#bbb;
+    cursor: pointer;
+  }
+  .clearfix:after{
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .items{
+    margin-top:20px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 30px;
+  }
+  .i-box:hover{
+    box-shadow: inset 0 0 15px rgba(0,0,0,.08);
+  }
+  .img-box{
+    width:100%;
+    height:45.7%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .img{
+    width:80%;
+    height:100%;
+    display: block;
+  }
+  .i-box{
+    background: #fff;
+    float:left;
+    border: 1px solid #eee;
+    width:33%;
+    height:200px;
+    box-sizing: border-box;
+    border-top:none;
+  }
+  .disc{
+    width:100%;
+    height:28%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    padding:5px 0;
+    box-sizing: border-box;
+  }
+  .sp-title,.sp-desc,.sp-price{
+    font-size: 12px;
+    width:90%;
+    font-weight: 600;
+    color: #666;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .sp-desc{
+    font-size: 12px;
+    font-weight: 500;
+    color: #ccc;
+  }
+  .sp-price{
+    font-size: 16px;
+    color: #FF3300;
+    font-style: italic;
+  }
+  .sp-yuan{
+    color:#ccc;
+    font-size: 12px;
+  }
+  .bt-box{
+    display: flex;
+    align-items: center;
+    height: 50px;
+  }
+  .bt-gouwuche{
+    width:50%;
+    height:30px;
+    border:1px solid #ddd;
+    background: rgba(25,25,25,.05);
+    border-radius: 4px;
+    color:#999;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    margin:0 auto;
+  }
+  .bt-gouwuche:focus{
+    outline: none;
+    box-shadow: inset 0 0 10px rgba(0,0,0,.08);
+  }

@@ -53,7 +53,7 @@
       getJingping(){
         axios({
           method:"get",
-          url:'http://localhost:8080/static/json/fuxi.json'
+          url:'http://xjlweb.icu/static/json/fuxi.json'
         }).then((res)=>{
           let t = res.data.shouji;
           let result = [];
@@ -78,6 +78,13 @@
     },
     created(){
       this.getJingping;
+      // if(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)){
+      //    //移动端CSS
+      //    require('../css/mb-block1.css');
+      // }else{
+      //    //PC端CSS
+      //    require('../css/pc-block1.css');
+      // }
     },
     beforeUpdate(){
       this.ifMax;
@@ -87,7 +94,7 @@
 </script>
 
 <style scoped>
-  .block{
+.block{
     height: 250px;
   }
   .lbutton,.rbutton{
@@ -96,7 +103,7 @@
     position: absolute;
     top:50%;
     cursor: pointer;
-    z-index: 99;
+    z-index: 20;
     font-size: 23px;
     font-weight: 700;
     color:#999;

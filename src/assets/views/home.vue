@@ -16,6 +16,7 @@
   // import block2 from '../component/block2.vue'
   // import block3 from '../component/block3.vue'
   // import block4 from '../component/block4.vue'
+  import {setCookie} from '../tool/util.js';
   export default{
     data(){
       return {
@@ -23,7 +24,7 @@
     },
     components:{
       "topChannel":resolve => {
-        require(['../component/topChannel.vue','../component/slider.vue'],resolve)
+        require(['../component/topChannel.vue'],resolve)
         },
       "slider":resolve => {
         require(['../component/slider.vue'],resolve)
@@ -48,7 +49,6 @@
       // "block-4":block4,
     },
     computed:{
-
     },
     created(){
     },

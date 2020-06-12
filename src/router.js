@@ -14,14 +14,13 @@ Router.prototype.push = function push(location, onResolve, onReject) {
   return originalPush.call(this, location).catch(err => err)
 }
 
-//把路由模块加入到vue中
-
+//在Vue中使用路由
 Vue.use(Router)
 
 //路由懒加载
 const ViewHome = () => import('./assets/views/home.vue')
-const ViewTopic = () => import('./assets/views/topic.vue')
-const ViewClass = () => import('./assets/views/class.vue')
+const ViewShopcar = () => import('./assets/views/shopcar.vue')
+const ViewSearch = () => import('./assets/views/search.vue')
 const ViewMy = () => import('./assets/views/my.vue')
 const ViewShop = () => import('./assets/views/shop.vue')
 const More = () => import('./assets/views/more.vue')
@@ -30,8 +29,8 @@ export default new Router({//new一个Router
 	routes:[
 		{ path:'/',redirect:'/home' },
 		{ path:'/home',component:ViewHome },
-		{ path:'/topic',component:ViewTopic },
-		{ path:'/class',component:ViewClass },
+		{ path:'/shopcar',component:ViewShopcar },
+		{ path:'/search',component:ViewSearch },
 		{ path:'/my',component:ViewMy },
 		{ path:'/shop',component:ViewShop },
 		{ path:'/more',component:More },

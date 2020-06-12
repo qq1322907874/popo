@@ -1,0 +1,46 @@
+  .ic-l{
+    transform: rotate(90deg);
+  }
+  .ic-r{
+    transform: rotate(-90deg);
+  }
+  ul li {
+          list-style: none;
+          float: left;
+          width: 30px;
+          height: 25px;
+          line-height: 25px;
+          text-align: center;
+          cursor: pointer;
+          color: rgba(255,255,255,.8);
+          font-size: 14px;
+      }
+      .banner {
+          max-width: 1200px;
+          margin: 0 auto;
+          height:416.6px;
+          position: relative;
+          margin-top: 70px;
+      }
+      .banner img {
+          position: absolute;
+          top:0;
+          left:0;
+          width: 100%;
+          display: block;
+      }
+      .banner .page {
+          background: rgba(0,0,0,.5);
+          position: absolute;
+          right: 0;
+          left:0;
+          bottom: 0px;
+          width: 100%;
+      }
+      .banner .page ul {
+          float: right;
+          margin-left: 5px;
+      }
+      .current {
+          color: #ff6722;
+      }

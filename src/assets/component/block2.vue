@@ -14,7 +14,7 @@
           <div class='sp-price'>￥{{i.price}} <span class='sp-yuan'>元</span></div>
         </div>
         <div class='bt-box'>
-          <button class='bt-gouwuche'>加入购物车</button>
+          <button class='bt-gouwuche' @click='jumpWeb(i.id)'>加入购物车</button>
         </div>
       </div>
     </div>
@@ -23,10 +23,12 @@
 
 <script>
   import axios from 'axios';
+  import bus from '../tool/bus.js'
+  import {setCookie,getCookie,addTogwc} from '../tool/util.js';
 export default{
   data(){
     return {
-      beibao:[]
+      beibao:[],
     }
   },
   methods:{
@@ -36,7 +38,7 @@ export default{
   },
   computed:{
     getBeibao(){
-      var url = "http://localhost:8080/static/json/fuxi.json";
+      var url = "http://xjlweb.icu/static/json/fuxi.json";
       axios.get(url).then((res)=>{
         this.beibao = [...res.data.beibao];
       })

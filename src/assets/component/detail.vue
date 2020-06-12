@@ -19,7 +19,7 @@
         </div>
         <div class="opt-item">
           <span class="ltitle">配置选项</span>
-          <div class="opt-box" :class="{checked:index==s}" v-for="i,index in detail.size" @click="checksize(i,index)">
+          <div class="opt-box morewidth" :class="{checked:index==s}" v-for="i,index in detail.size" @click="checksize(i,index)">
             <div class="opt-size">{{i}}</div>
           </div>
         </div>
@@ -43,7 +43,7 @@
       </div>
       <div class="sp-allprice">￥{{allprice}}.00<span>元</span></div>
       <div class="sp-buy">购买</div>
-      <div class="sp-gouwuce">加入购物车</div>
+      <div class="sp-gouwuce" @click="addTo(detail)">加入购物车</div>
     </div>
   </div>
   <div class="introduction">
@@ -54,6 +54,8 @@
 
 <script>
   import axios from 'axios';
+  import bus from '../tool/bus.js'
+  import {setCookie,getCookie,addTogwc} from '../tool/util.js';
   export default{
     data(){
       return {
@@ -67,6 +69,12 @@
       }
     },
     methods:{
+      addTo(i){
+        this.color = this.color === '' ? i.opt[0] : this.color;
+        this.size = this.size === '' ? i.size[0] : this.size;
+        let clickcount = parseInt(addTogwc(i,this.color,this.size));
+        bus.$emit("toGwc",clickcount);//通过事件总线传给同级的Header组件
+      },
       checkcol(col,ind){
         this.color = col;
         this.c = parseInt(ind);
@@ -89,11 +97,16 @@
       },
     },
     computed:{
+      keepTop(){
+        this.$router.afterEach((to, from, next) => {
+            window.scrollTo(0, 0)
+        })
+      },
       allPrice(){
         return this.allprice = this.detail.price * this.count;
       },
       getData(){
-        var url = "http://localhost:8080/static/json/fuxi.json"
+        let url = "http://xjlweb.icu/static/json/fuxi.json";
         axios.get(url).then((res)=>{
           let current = res.data;
           let u = window.location.href;
@@ -122,11 +135,12 @@
       }
     },
     created(){
+      this.keepTop;
       this.getData;
     },
     mounted(){
       this.$router.afterEach((to, from, next) => {
-          window.scrollTo(0, 0)
+          window.scrollTo(0, 0);
       })
     },
     updated(){
@@ -148,6 +162,8 @@
     float:left;
     text-align: center;
     font-size: 20px;
+    background: rgba(25,25,25,.03);
+    color:#666;
     font-weight: 600;
     border-radius: 50%;
     border:1px solid #ccc;
@@ -249,6 +265,9 @@
     cursor: pointer;
     border:1px solid #ddd;
     background: rgba(25,25,25,.04);
+  }
+  .morewidth{
+    width:100px;
   }
   .bottom{
     position: fixed;

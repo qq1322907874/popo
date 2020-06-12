@@ -5,19 +5,20 @@
 </template>
 
 <script>
-  import sptypes from "../component/sptype.vue"
 export default{
   data(){
     return {
     }
   },
   components:{
-    "sptypes":sptypes
+    "sptypes":resolve=>{
+      require(["../component/sptype.vue"],resolve)
+    }
   }
 }
 
 </script>
 
 <style scoped>
- 
+
 </style>

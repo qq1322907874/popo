@@ -22,7 +22,7 @@
           <div class='sp-price'>￥{{i.price}} <span class='sp-yuan'>元</span></div>
         </div>
         <div class='bt-box'>
-          <button class='bt-gouwuche'>购买</button>
+          <button class='bt-gouwuche' @click="jumpWeb(i.id)">去购买</button>
         </div>
       </div>
     </div>
@@ -76,28 +76,28 @@ export default{
   },
   computed:{
     getBeibao(){
-      var url = "http://localhost:8080/static/json/fuxi.json";
+	  let url = "http://xjlweb.icu/static/json/fuxi.json";
       axios.get(url).then((res)=>{
         var all = window.location.href;
         var search = all.split("=")
         if(search[1] === '1000'){
           let t = [];
           t = [...res.data.beibao];
-          t = [...res.data.beibao].concat(t,t,t,t,t);
+          t = [...res.data.beibao].concat(t,t,t,t,t,t,t);
           this.beibao = t;
           this.list = t.slice(0, 12)
           this.moreShowBoolen = false;//可以判断是否大于12再设置
         }else if(search[1] === '2000'){
           let t = [];
           t = [...res.data.duanxiu];
-          t = [...res.data.duanxiu].concat(t,t,t,t,t);
+          t = [...res.data.duanxiu].concat(t,t,t,t,t,t,t);
           this.beibao = t;
           this.list = t.slice(0, 12)
           this.moreShowBoolen = false
         }else if(search[1] === '3000'){
           let t = [];
           t = [...res.data.shouji];
-          t = [...res.data.shouji].concat(t,t,t,t,t);
+          t = [...res.data.shouji].concat(t,t,t,t,t,t,t);
           this.beibao = t;
           this.list = t.slice(0, 12)
           this.moreShowBoolen = false

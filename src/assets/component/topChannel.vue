@@ -1,9 +1,9 @@
 <template lang=''>
-	<div class="wrapper">
+	<div class="topch" v-cloak>
 		<ul class="topnav" >
         <li class="opt" @click="optTo('tj')"  :class="this.isActive('tj')">推荐
         </li>
-        <li class="opt" @click="optTo('xs')"  :class="this.isActive('xs')" @mouseover="hover('xs')">限时
+        <li class="opt" @click="optTo('xs')"  :class="this.isActive('xs')">限时
           <!--  <div class='pull' v-if="isHover" @mouseover="own('xs')" @mouseout="own("false")">
               <div class='list'>
                  <div><a href="#"></a></div>
@@ -17,7 +17,7 @@
                </div>
             </div> -->
         </li>
-        <li class="opt" @click="optTo('xp')"  :class="this.isActive('xp')" @mouseover="hover('xp')">新品
+        <li class="opt" @click="optTo('xp')"  :class="this.isActive('xp')">新品
            <!-- <div class='pull' v-if="isHover" @mouseover="own('xp')" @mouseout="own("false")">
                <div class='list'>
                  <div><a href="#"></a></div>
@@ -31,7 +31,7 @@
                </div>
             </div> -->
         </li>
-        <li class="opt" @click="optTo('jj')"  :class="this.isActive('jj')" @mouseover="hover('jj')">居家
+        <li class="opt" @click="optTo('jj')"  :class="this.isActive('jj')">居家
             <!-- <div class='pull' v-if="isHover" @mouseover="own('jj')" @mouseout="own("false")">
                <div class='list'>
                  <div><a href="#"></a></div>
@@ -45,7 +45,7 @@
                </div>
             </div> -->
         </li>
-        <li class="opt" @click="optTo('fs')"  :class="this.isActive('fs')" @mouseover="hover('fs')">服饰
+        <li class="opt" @click="optTo('fs')"  :class="this.isActive('fs')">服饰
             <!-- <div class='pull' v-if="isHover" @mouseover="own('fs')" @mouseout="own("false")">
               <div class='list'>
                  <div><a href="#"></a></div>
@@ -59,7 +59,7 @@
                </div>
             </div> -->
         </li>
-        <li class="opt" @click="optTo('ms')"  :class="this.isActive('ms')" @mouseover="hover('ms')">美食
+        <li class="opt" @click="optTo('ms')"  :class="this.isActive('ms')">美食
             <!-- <div class='pull' v-if="isHover" @mouseover="own('ms')" @mouseout="own("false")">
                <div class='list'>
                  <div><a href="#"></a></div>
@@ -115,7 +115,13 @@
       }
     },
     created(){
-
+      // if(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)){
+      //    //移动端CSS
+      //    require('../css/mb-topChannel.css');
+      // }else{
+      //    //PC端CSS
+      //    require('../css/pc-topChannel.css');
+      // }
     },
     mounted(){
       // this.initposition();
@@ -124,6 +130,10 @@
 </script>
 
 <style scoped>
+
+[v-cloak]{
+      display: none;
+  }
   .pull{
     width:1280px;
     height:300px;
@@ -144,7 +154,7 @@
     color:#ff2200;
     background-color: rgba(0,0,0,.1);
   }
-  .wrapper{
+  .topch{
     	position:absolute;
       top:60px;
       left:0px;

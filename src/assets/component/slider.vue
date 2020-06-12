@@ -24,7 +24,7 @@
         "https://i1.mifile.cn/a4/xmad_15517939170939_oiXCK.jpg"],
           currentIndex: 0,   //默认显示图片
           timer: null,    //定时器
-          heig:{height:"450px"},
+          heig:{height:"0px"},
           show:true,
       }
     },
@@ -70,6 +70,19 @@
     beforeCreate(){
     },
     created(){
+      let h = 1200 * 0.375;
+      this.heig = {height:h+"px"};
+      // if(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)){
+      //    let h = document.body.clientWidth * 0.375;
+      //    this.heig = {height:h+"px"};
+      // //移动端CSS
+      //    require('../css/mb-slider.css');
+      // }else{
+      //   let h = 1200 * 0.375;
+      //   this.heig = {height:h+"px"};
+      //    //PC端CSS
+      //    require('../css/pc-slider.css');
+      // }
     },
     mounted(){
       // this.boxheight();
@@ -128,4 +141,3 @@
       }
 
 </style>
-
